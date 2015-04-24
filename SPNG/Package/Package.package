@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="b52c812f-a25c-4294-be73-988d360e0623" 
+        solutionId="b52c812f-a25c-4294-be73-988d360e0623" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="SPNG"
+        sharePointProductVersion="16.0">
+  <features>
+        <featureReference itemId="42fec927-590e-4ad5-9dad-3e32ce8cc7a1" />
+  </features>
+</package>

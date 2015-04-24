@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Scripts\" Type="ElementManifest" />
+    <ProjectItemFile Source="App.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-2.1.3.min.map" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-2.1.3.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-2.1.3.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-2.1.3.intellisense.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="npm.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="bootstrap.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="bootstrap.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-mocks.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular.min.js.map" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="MyScripts\module.js" Target="Scripts\MyScripts\" Type="ElementFile" />
+    <ProjectItemFile Source="MyScripts\service.js" Target="Scripts\MyScripts\" Type="ElementFile" />
+    <ProjectItemFile Source="MyScripts\controller.js" Target="Scripts\MyScripts\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-ui\ui-bootstrap-tpls.min.js" Target="Scripts\angular-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-ui\ui-bootstrap-tpls.js" Target="Scripts\angular-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-ui\ui-bootstrap.min.js" Target="Scripts\angular-ui\" Type="ElementFile" />
+    <ProjectItemFile Source="angular-ui\ui-bootstrap.js" Target="Scripts\angular-ui\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

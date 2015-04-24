@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="SharePoint App Feature" Id="42fec927-590e-4ad5-9dad-3e32ce8cc7a1" Scope="Web" Title="SPNG Feature1" Version="1.0.0.0">
+  <ElementManifests>
+    <ElementManifest Location="Pages\Elements.xml" />
+    <ElementFile Location="Pages\Default.aspx" />
+    <ElementManifest Location="Scripts\Elements.xml" />
+    <ElementFile Location="Scripts\App.js" />
+    <ElementFile Location="Scripts\jquery-2.1.3.min.map" />
+    <ElementFile Location="Scripts\jquery-2.1.3.min.js" />
+    <ElementFile Location="Scripts\jquery-2.1.3.js" />
+    <ElementFile Location="Scripts\jquery-2.1.3.intellisense.js" />
+    <ElementFile Location="Scripts\npm.js" />
+    <ElementFile Location="Scripts\bootstrap.min.js" />
+    <ElementFile Location="Scripts\bootstrap.js" />
+    <ElementFile Location="Scripts\angular-mocks.js" />
+    <ElementFile Location="Scripts\angular.min.js.map" />
+    <ElementFile Location="Scripts\angular.min.js" />
+    <ElementFile Location="Scripts\angular.js" />
+    <ElementFile Location="Scripts\MyScripts\module.js" />
+    <ElementFile Location="Scripts\MyScripts\service.js" />
+    <ElementFile Location="Scripts\MyScripts\controller.js" />
+    <ElementFile Location="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <ElementFile Location="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <ElementFile Location="Scripts\angular-ui\ui-bootstrap.min.js" />
+    <ElementFile Location="Scripts\angular-ui\ui-bootstrap.js" />
+    <ElementManifest Location="Content\Elements.xml" />
+    <ElementFile Location="Content\App.css" />
+    <ElementFile Location="Content\bootstrap-theme.min.css" />
+    <ElementFile Location="Content\bootstrap-theme.css.map" />
+    <ElementFile Location="Content\bootstrap-theme.css" />
+    <ElementFile Location="Content\bootstrap.min.css" />
+    <ElementFile Location="Content\bootstrap.css.map" />
+    <ElementFile Location="Content\bootstrap.css" />
+    <ElementManifest Location="Images\Elements.xml" />
+    <ElementFile Location="Images\AppIcon.png" />
+    <ElementManifest Location="Elements.xml" />
+    <ElementFile Location="fonts\glyphicons-halflings-regular.woff2" />
+    <ElementFile Location="fonts\glyphicons-halflings-regular.woff" />
+    <ElementFile Location="fonts\glyphicons-halflings-regular.ttf" />
+    <ElementFile Location="fonts\glyphicons-halflings-regular.svg" />
+    <ElementFile Location="fonts\glyphicons-halflings-regular.eot" />
+  </ElementManifests>
+  <UpgradeActions>
+    <VersionRange>
+      <ApplyElementManifests>
+        <ElementManifest Location="Pages\Elements.xml" />
+        <ElementManifest Location="Scripts\Elements.xml" />
+        <ElementManifest Location="Content\Elements.xml" />
+        <ElementManifest Location="Images\Elements.xml" />
+        <ElementManifest Location="Elements.xml" />
+      </ApplyElementManifests>
+    </VersionRange>
+  </UpgradeActions>
+</Feature>

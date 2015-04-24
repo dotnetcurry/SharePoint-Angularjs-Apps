@@ -1,0 +1,3 @@
+E:\Mahesh_New\Articles\Feb15\SPNG\SPNG\bin\Debug\SPNG.pdb
+E:\Mahesh_New\Articles\Feb15\SPNG\SPNG\obj\Debug\SPNG.dll
+E:\Mahesh_New\Articles\Feb15\SPNG\SPNG\obj\Debug\SPNG.pdb

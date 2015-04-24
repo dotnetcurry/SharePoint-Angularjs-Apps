@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Scripts">
+    <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.3.min.map" Url="Scripts/jquery-2.1.3.min.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.3.min.js" Url="Scripts/jquery-2.1.3.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.3.js" Url="Scripts/jquery-2.1.3.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-2.1.3.intellisense.js" Url="Scripts/jquery-2.1.3.intellisense.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\npm.js" Url="Scripts/npm.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\bootstrap.min.js" Url="Scripts/bootstrap.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\bootstrap.js" Url="Scripts/bootstrap.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-mocks.js" Url="Scripts/angular-mocks.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular.min.js.map" Url="Scripts/angular.min.js.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular.min.js" Url="Scripts/angular.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular.js" Url="Scripts/angular.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\MyScripts\module.js" Url="Scripts/MyScripts/module.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\MyScripts\service.js" Url="Scripts/MyScripts/service.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\MyScripts\controller.js" Url="Scripts/MyScripts/controller.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.min.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap-tpls.js" Url="Scripts/angular-ui/ui-bootstrap-tpls.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap.min.js" Url="Scripts/angular-ui/ui-bootstrap.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular-ui\ui-bootstrap.js" Url="Scripts/angular-ui/ui-bootstrap.js" ReplaceContent="TRUE" />
+  </Module>
+</Elements>
