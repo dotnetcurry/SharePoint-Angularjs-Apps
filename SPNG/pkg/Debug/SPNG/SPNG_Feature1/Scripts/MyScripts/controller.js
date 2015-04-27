@@ -1,8 +1,5 @@
-﻿
+﻿(function (app) {
 app.controller('spscontroller', function ($scope,spsservice) {
-
-
-
 
     load();
     
@@ -15,10 +12,9 @@ app.controller('spscontroller', function ($scope,spsservice) {
     var IsUpdate = false;
     //Function to load all categories
     function load() {
-        var promiseGet = spsservice.get($scope);
-
+        var promiseGet = spsservice.get();
         promiseGet.then(function (resp) {
-            $scope.Categories = resp.data;
+            $scope.Categories = resp;
         }, function (err) {
             $scope.Message = "Error " + err.status;
         });
@@ -38,14 +34,20 @@ app.controller('spscontroller', function ($scope,spsservice) {
     $scope.save = function ($event) {
         $event.preventDefault();
         if (!IsUpdate) {
-            var promiseSave = spsservice.add($scope);
+            var promiseSave = spsservice.add($scope.Category);
             promiseSave.then(function (resp) {
-                alert("Saved");
+                //alert("Saved");
+                debugger;
+                $scope.Categories.push({
+                    ID: resp.ID,
+                    CategoryId: resp.CategoryId,
+                    CategoryName:resp.CategoryName
+                });
             }, function (err) {
                 $scope.Message = "Error " + err.status;
             });
         } else {
-            var promiseUpdate = spsservice.update($scope);
+            var promiseUpdate = spsservice.update($scope.Category);
             promiseUpdate.then(function (resp) {
                 alert("Saved");
             }, function (err) {
@@ -55,3 +57,4 @@ app.controller('spscontroller', function ($scope,spsservice) {
         }
     }
 });
+}(angular.module('spsmodule')));

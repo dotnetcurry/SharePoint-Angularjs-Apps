@@ -1,4 +1,4 @@
-﻿var app;
+﻿//var app;
 (function () {
-    app = angular.module('spsmodule', []);
+   angular.module('spsmodule', []);
 })();

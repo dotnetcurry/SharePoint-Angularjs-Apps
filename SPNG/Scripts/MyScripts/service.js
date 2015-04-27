@@ -1,17 +1,19 @@
-﻿function manageQueryStringParameter(paramToRetrieve) {
-    var params =
-    document.URL.split("?")[1].split("&");
-    var strParams = "";
-    for (var i = 0; i < params.length; i = i + 1) {
-        var singleParam = params[i].split("=");
-        if (singleParam[0] == paramToRetrieve) {
-            return singleParam[1];
-        }
-    }
-}
-
+﻿
+(function (app) {
 app.service('spsservice', function ($q) {
 
+
+    function manageQueryStringParameter(paramToRetrieve) {
+        var params =
+        document.URL.split("?")[1].split("&");
+        var strParams = "";
+        for (var i = 0; i < params.length; i = i + 1) {
+            var singleParam = params[i].split("=");
+            if (singleParam[0] == paramToRetrieve) {
+                return singleParam[1];
+            }
+        }
+    }
 
     var hostWebUrl;
     var appWebUrl;
@@ -22,7 +24,7 @@ app.service('spsservice', function ($q) {
 
 
     //Function to read all records
-    this.get = function ($scope) {
+    this.get = function () {
 
         var deferred = $q.defer();
         //Get the SharePoint Context object based upon the URL
@@ -42,26 +44,24 @@ app.service('spsservice', function ($q) {
         ctx.load(list); //Retrieves the properties of a client object from the server.
         ctx.load(items);
 
-        var CategoryArray = [];
+       
         //Execute the Query Asynchronously
         ctx.executeQueryAsync(
             Function.createDelegate(this, function () {
                 var itemInfo = '';
                 var enumerator = items.getEnumerator();
-
+                var CategoryArray = [];
 
                 while (enumerator.moveNext()) {
                     var currentListItem = enumerator.get_current();
                      
-                    $scope.Categories.push({
+                    CategoryArray.push({
                         ID: currentListItem.get_item('ID'),
                         CategoryId: currentListItem.get_item('Title'),
                         CategoryName: currentListItem.get_item('CategoryName')
                     });
-                    //$scope is not updating so force with this command
-                    $scope.$apply();
-
                 }
+                deferred.resolve(CategoryArray);
             }),
             Function.createDelegate(this, function (sender, args) {
                 deferred.reject('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
@@ -71,7 +71,8 @@ app.service('spsservice', function ($q) {
     };
 
     //Function to Add the new record in the List
-    this.add = function ($scope) {
+    this.add = function (Category) {
+       
         var deferred = $q.defer();
        //debugger;
         var ctx = new SP.ClientContext(appWebUrl);//Get the SharePoint Context object based upon the URL
@@ -85,28 +86,26 @@ app.service('spsservice', function ($q) {
         ctx.load(list);
         var listItem = list.addItem(listCreationInformation);
 
-        listItem.set_item("Title", $scope.Category.CategoryId);
-        listItem.set_item("CategoryName", $scope.Category.CategoryName);
+        listItem.set_item("Title", Category.CategoryId);
+        listItem.set_item("CategoryName", Category.CategoryName);
         listItem.update(); //Update the List Item
 
         ctx.load(listItem);
         //Execute the batch Asynchronously
         ctx.executeQueryAsync(
             Function.createDelegate(this, function () {
-                $scope.$apply(function () {
-                    alert("Success");
+                var Categories = [];
                     var id = listItem.get_id();
-                    $scope.Categories.push({
+                   Categories.push({
                         ID: listItem.get_item('ID'),
                         CategoryId: listItem.get_item('Title'),
                         CategoryName: listItem.get_item('CategoryName')
-                    });
-                });
-            }),
+                   });
+                   deferred.resolve(Categories);
+                 }),
             Function.createDelegate(this, function () {
-                scope.$apply(function (sender, args) {
-                    deferred.reject('Request failed. ');
-                });
+                deferred.reject('Request failed. ' + args.get_message() +
+'\n' + args.get_stackTrace());
             })
            );
 
@@ -114,7 +113,8 @@ app.service('spsservice', function ($q) {
     }
 
     //Method to Update update the record
-    this.update = function ($scope) {
+    this.update = function (Category) {
+         
         var deferred = $q.defer();
         var ctx = new SP.ClientContext(appWebUrl);
         var appCtxSite = new SP.AppContextSite(ctx, hostWebUrl);
@@ -124,31 +124,30 @@ app.service('spsservice', function ($q) {
         var list = web.get_lists().getByTitle("CategoryList");
         ctx.load(list);
 
-        listItemToUpdate = list.getItemById($scope.Category.ID);
+        listItemToUpdate = list.getItemById(Category.ID);
 
         ctx.load(listItemToUpdate);
 
-        listItemToUpdate.set_item('CategoryName', $scope.Category.CategoryName);
+        listItemToUpdate.set_item('CategoryName', Category.CategoryName);
         listItemToUpdate.update();
 
         ctx.executeQueryAsync(
             Function.createDelegate(this, function () {
-                $scope.$apply(function () {
-                    alert("Success");
-                    var id = listItem.get_id();
-                    $scope.Categories.push({
-                        ID: listItem.get_item('ID'),
-                        CategoryId: listItem.get_item('Title'),
-                        CategoryName: listItem.get_item('CategoryName')
+               var Categories = [];
+               var id = listItemToUpdate.get_id();
+                    Categories.push({
+                        ID: listItemToUpdate.get_item('ID'),
+                        CategoryId: listItemToUpdate.get_item('Title'),
+                        CategoryName: listItemToUpdate.get_item('CategoryName')
                     });
-                });
+                    deferred.resolve(Categories);
             }),
             Function.createDelegate(this, function () {
-                scope.$apply(function (sender, args) {
-                    deferred.reject('Request failed. ');
-                });
+                deferred.reject('Request failed. ' + args.get_message() +
+'\n' + args.get_stackTrace());
             })
             );
         return deferred.promise;
     };
 });
+}(angular.module('spsmodule')));
